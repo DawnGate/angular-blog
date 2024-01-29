@@ -1,4 +1,4 @@
-# Blogs
+#https://store.epicgames.com/ Blogs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
 
@@ -10,9 +10,10 @@ This project for starting with angular
 
 The idea from nextjs templates: 
 - https://next-blog-starter.vercel.app/
-- https://ghost.estudiopatagon.com/wavy/
+- https://vercel.com/blog
 
 - 2 app
 => First app will next js simple blog start
-=> Second app will wavy app 
+=> Second will vercel blog 
 
+- we will seperate 2 module with 2 router ( /simple, /premium)
