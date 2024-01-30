@@ -1,0 +1,38 @@
+<div class="not-found-post" *ngIf="post === undefined">
+  <h1>We can't find your post</h1>
+</div>
+
+
+<main class="container" *ngIf="post">
+  <div class="banner-content">
+    <a routerLink="/simple">
+      <p>Blog.</p>
+    </a>
+  </div>
+  <div class="post-title">
+    <p>
+      {{post.title}}
+    </p>
+  </div>
+  <div class="post-author">
+    <div class="post-author-img">
+      <img [src]="origin + post.author.picture" />
+    </div>
+    <div class="post-author-name">
+      <p>{{post.author.name}}</p>
+    </div>
+  </div>
+  <div class="post-image">
+    <img [src]="origin + post.coverImage" />
+  </div>
+
+  <div class="post-date">
+    <p>
+    {{ post.date | date:"MMMM dd, YYYY" }}
+    </p>
+  </div>
+
+  <div class="post-content" [innerHTML]="post.content">
+  </div>
+
+</main>

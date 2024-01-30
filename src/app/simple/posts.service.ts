@@ -29,5 +29,4 @@ export class SimplePostsService {
     return this.http.get<PostShort[]>('/assets/simple-posts.json')
   }
 
-
 }

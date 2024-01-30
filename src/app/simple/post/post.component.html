@@ -1,7 +1,7 @@
 <div class="container">
   <div class="blog-title">
     <div class="blog-logo">
-      <a href="/">
+      <a href="/simple">
         <p>Blog.</p>
       </a>
     </div>
@@ -12,13 +12,13 @@
   <section *ngIf="latestPost" class="latest-blog">
     <div class="blog-post">
       <div class="post-banner">
-        <a [routerLink]="latestPost.slug">
+        <a [routerLink]=" 'post/' + latestPost.slug">
           <img [src]="origin + latestPost.coverImage" />
         </a>
       </div>
       <div class="post-container">
         <div class="post-description">
-          <a [routerLink]="latestPost.slug">
+          <a [routerLink]=" 'post/' + latestPost.slug">
             <div class="post-title">{{latestPost.title}}</div>
           </a>
           <div class="post-date">{{ latestPost.date | date:"MMMM dd, YYYY" }}</div>
@@ -46,13 +46,13 @@
     <div class="other-blogs-container">
       <div class="blog-post"  *ngFor="let otherPost of otherPosts">
         <div class="post-banner">
-          <a [routerLink]="otherPost.slug">
+          <a [routerLink]="'post/' +  otherPost.slug">
             <img [src]="origin + otherPost.coverImage" />
           </a>
         </div>
         <div class="post-container">
           <div class="post-description">
-            <a [routerLink]="otherPost.slug">
+            <a [routerLink]=" 'post/' + otherPost.slug">
               <div class="post-title">{{otherPost.title}}</div>
             </a>
             <div class="post-date">{{ otherPost.date | date:"MMMM dd, YYYY" }}</div>

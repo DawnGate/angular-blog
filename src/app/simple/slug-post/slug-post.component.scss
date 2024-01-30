@@ -1,0 +1,88 @@
+.not-found-post {
+  margin: auto;
+  padding: 128px 0;
+  h1 {
+    text-align: center;
+    font-size: 72px;
+    line-height: 84px;
+    font-weight: 700
+  }
+}
+
+.banner-content {
+  margin: 32px 0 80px 0;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.post-title {
+  font-size: 100px;
+  line-height: 100px;
+  letter-spacing: -4px;
+  font-weight: 700;
+
+  margin-bottom: 48px;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 48px;
+}
+
+.post-author-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.post-author-name {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.post-image {
+  margin-bottom: 64px;
+}
+
+.post-date {
+  margin: 0 auto;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+
+  max-width: 672px;
+
+}
+
+
+::ng-deep {
+
+  .post-content {
+    margin: 0 auto;
+    margin-bottom: 128px;
+    max-width: 672px;
+
+    p {
+      margin: 24px 0;
+      font-size: 18px;
+      line-height: 29.25px;
+      font-weight: 400;
+    }
+
+    h2, h1 {
+
+      margin: 48px 0 16px 0;
+
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 41.25px;
+    }
+  }
+
+}
