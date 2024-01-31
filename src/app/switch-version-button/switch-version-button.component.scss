@@ -1,0 +1,77 @@
+.switch-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+.toggle-switch {
+  padding: 8px 12px;
+  padding-right: calc(12px + 24px);
+  background: var(--primary-color);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 48px;
+  height: 24px;
+  border-radius: 20px;
+  background: var(--secondary-color);
+
+  cursor: pointer;
+
+  border: 1px solid white;
+  appearance: none;
+  -webkit-appearance: none;
+
+  --handleoffset: -24px;
+
+
+
+
+  &.checked {
+    --handleoffset: 24px;
+  }
+
+  box-shadow: var(--handleoffset) 0 0 2px var(--primary-color) inset, 0 0 0 2px var(--primary-color) inset, 0 0;
+  transition: background, box-shadow 0.2s ease-out;
+}
+
+.label {
+  opacity: 0;
+  position: absolute;
+  right: 8px;
+
+  color: var(--secondary-color);
+
+  font-weight: 700;
+  animation: fadeOut 1s;
+
+  &.show {
+    animation: fadeIn 1s;
+    opacity: 1;
+  }
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

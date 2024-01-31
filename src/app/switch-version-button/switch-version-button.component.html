@@ -1,0 +1,11 @@
+<div class="switch-container">
+  <div class="toggle-switch">
+    <input class="toggle-input"
+      type="checkbox"
+      [class.checked]="checked"
+      (click)="toggleCheck()"
+    />
+    <div class="label simple-label" [class.show]="!checked">SP</div>
+    <div class="label premiun-label" [class.show]="checked">PR</div>
+  </div>
+</div>
