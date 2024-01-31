@@ -14,7 +14,9 @@ export const routes: Routes = [
     loadChildren: () => import("./simple/routes").then(res => res.SIMPLE_ROUTES)
   },
   {
-    path: 'premium', component: HomePremiumComponent,
+    path: 'premium',
+    component: HomePremiumComponent,
+    loadChildren: () => import("./premium/routes").then(res => res.SIMPLE_ROUTES)
   },
   {
     path: '**', component: HomeSimpleComponent

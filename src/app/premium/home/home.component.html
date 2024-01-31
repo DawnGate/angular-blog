@@ -1,2 +1,32 @@
-<p>home premium works!</p>
-<div>What the problem of this</div>
+<main class="container">
+  <div class="header">
+    <div class="blog-title">
+      <p>All posts</p>
+    </div>
+    <div class="header-search">
+      Search
+    </div>
+  </div>
+  <div class="bentos-container hightlight-posts">
+    <div class="highlight-post" *ngFor="let post of highlightPosts; index as i" [class.main]="i===0" [class.end]="i===2||i===3">
+      <div class="highligh-post-container">
+        <div>
+          <img />
+        </div>
+        <div>
+          {{post.title}}
+        </div>
+        <div>
+          <div></div>
+          <div>{{post.date | date:"MMM. dd YYYY"}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>Latest</div>
+    <div>
+      <button>More</button>
+    </div>
+  </div>
+</main>
