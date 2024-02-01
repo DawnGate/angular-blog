@@ -17,3 +17,5 @@ The idea from nextjs templates:
 => Second will vercel blog 
 
 - we will seperate 2 module with 2 router ( /simple, /premium)
+
+- apifor get premium data: https://vercel.com/api/blog/posts?skip=0&limit=1&fields.title=[post-url]

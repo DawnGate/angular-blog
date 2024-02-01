@@ -24,12 +24,15 @@ main.container {
   flex: 1;
 }
 
-.bentos-container {
+.bentos-container.highlight-posts {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
+  height: 600px;
 
   .highlight-post {
+    border-radius: 8px;
+    overflow: hidden;
 
     grid-row-start: span 3;
 
@@ -40,5 +43,71 @@ main.container {
     &.end {
       grid-row-start: span 4;
     }
+
+
+  }
+
+  .highlight-post-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    padding: 24px;
+
+    cursor: pointer;
+
+    &::after {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(180deg,transparent,rgba(0,0,0,.7) 50%,#000 75%,#000);
+      transition: opacity 0.2s;
+    }
+
+    &:hover::after {
+      opacity: 0.7;
+    }
+
+    .post-banner {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        object-position: right;
+      }
+    }
+
+    .post-information {
+      position: relative;
+      z-index: 2;
+
+      .post-title {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+        letter-spacing: -0.47px;
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  .highlight-post.main .highlight-post-container .post-title {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      letter-spacing: -0.47px;
+      color: var(--secondary-color);
   }
 }
+
+

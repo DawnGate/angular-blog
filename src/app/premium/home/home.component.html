@@ -7,20 +7,26 @@
       Search
     </div>
   </div>
-  <div class="bentos-container hightlight-posts">
-    <div class="highlight-post" *ngFor="let post of highlightPosts; index as i" [class.main]="i===0" [class.end]="i===2||i===3">
-      <div class="highligh-post-container">
-        <div>
-          <img />
+  <div class="bentos-container highlight-posts">
+    <div
+      class="highlight-post"
+      *ngFor="let post of highlightPosts; index as i"
+      [class.main]="i===0"
+      [class.end]="i===2||i===3">
+      <a class="highlight-post-container">
+        <div class="post-banner">
+          <img [src]="post.ogImage" />
         </div>
-        <div>
-          {{post.title}}
+        <div class="post-information">
+          <div class="post-title">
+            {{post.title}}
+          </div>
+          <div class="post-author-date">
+            <div></div>
+            <div>{{post.date | date:"MMM. dd YYYY"}}</div>
+          </div>
         </div>
-        <div>
-          <div></div>
-          <div>{{post.date | date:"MMM. dd YYYY"}}</div>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
   <div>

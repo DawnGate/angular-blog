@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
+  z-index: 1000;
 }
 
 .toggle-switch {
@@ -12,6 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  border: 1px solid var(--secondary-color);
 }
 
 input {
@@ -27,9 +30,6 @@ input {
   -webkit-appearance: none;
 
   --handleoffset: -24px;
-
-
-
 
   &.checked {
     --handleoffset: 24px;
