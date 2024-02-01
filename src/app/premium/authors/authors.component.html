@@ -1,0 +1,13 @@
+<div class="author-container">
+  <div class="author-avatars">
+    <div class="author-avatar" *ngFor="let avatar of authors">
+      <img [src]="avatarOrigin.replace('userName', avatar.vercel)" />
+    </div>
+  </div>
+  <div class="author-names" *ngIf="showName">
+    <p>
+      {{ getNames | json }}
+    </p>
+  </div>
+  <div>{{date | date:"MMM. dd YYYY"}}</div>
+</div>

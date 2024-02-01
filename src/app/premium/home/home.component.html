@@ -15,24 +15,42 @@
       [class.end]="i===2||i===3">
       <a class="highlight-post-container">
         <div class="post-banner">
-          <img [src]="post.ogImage" />
+          <img [src]="post.ogImage.source" />
         </div>
         <div class="post-information">
           <div class="post-title">
             {{post.title}}
           </div>
-          <div class="post-author-date">
-            <div></div>
-            <div>{{post.date | date:"MMM. dd YYYY"}}</div>
+          <div class="post-author-and-date">
+            <app-authors [authors]="post.authors" [date]="post.date"></app-authors>
           </div>
         </div>
       </a>
     </div>
   </div>
-  <div>
-    <div>Latest</div>
-    <div>
-      <button>More</button>
+  <div class="body-container">
+    <div class="body-title">
+      <p>
+        Latest
+      </p>
+    </div>
+    <div class="body-content">
+      <div class="post-preview" *ngFor="let post of allPosts">
+        <div class="post-category">
+          <p *ngIf="post.category">{{post.category.name}}</p>
+        </div>
+        <div class="post-title">
+          <a [routerLink]="'post/' + post.id">
+            <p>{{post.title}}</p>
+          </a>
+        </div>
+        <div class="post-author-and-date">
+          <app-authors [authors]="post.authors" [showName]="false" [date]="post.date"></app-authors>
+        </div>
+      </div>
+    </div>
+    <div class="body-helper">
+      <button *ngIf="canLoadMore" (click)="handleLoadMore()" class="btn-more-posts">Load More</button>
     </div>
   </div>
 </main>

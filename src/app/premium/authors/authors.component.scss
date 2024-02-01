@@ -1,0 +1,44 @@
+.author-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgb(161, 161, 161);
+}
+
+
+.author-avatars {
+  display: flex;
+  align-items: center;
+
+  .author-avatar {
+    margin-left: -6px;
+
+    &:first-of-type {
+      margin-left: 0px;
+    }
+
+    img {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--primary-color);
+    }
+  }
+}
+
+.author-names {
+  flex: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

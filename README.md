@@ -19,3 +19,6 @@ The idea from nextjs templates:
 - we will seperate 2 module with 2 router ( /simple, /premium)
 
 - apifor get premium data: https://vercel.com/api/blog/posts?skip=0&limit=1&fields.title=[post-url]
+
+- problem occur: First time when calling data from server it ok, but second time will not
+- maybe need download data and store as json in local server
