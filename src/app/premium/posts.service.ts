@@ -21,11 +21,8 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
   getPosts = (pageIndex: number) => {
-    const pageSize = pageIndex*10;
-    return this.http.get<{posts: IFullPost[]}>(`https://vercel.com/api/blog/posts?skip=${pageSize}&limit=10&fields.recommended=false&order=-fields.date`)
+    const fileName = pageIndex ? "-additionals" : "";
+    return this.http.get<IFullPost[]>("/assets/premium-posts" + fileName + ".json")
   }
 
-  getHighlightPosts = () => {
-    return this.http.get<IFullPost[]>("/assets/premium-highlight.json")
-  }
 }

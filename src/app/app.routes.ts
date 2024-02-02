@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { HomePremiumComponent } from './premium/home/home.component';
 import { HomeSimpleComponent } from './simple/home/home.component';
 
 
@@ -15,8 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'premium',
-    component: HomePremiumComponent,
-    loadChildren: () => import("./premium/routes").then(res => res.SIMPLE_ROUTES)
+    loadChildren: () => import("./premium/routes").then(res => res.ROUTES)
   },
   {
     path: '**', component: HomeSimpleComponent

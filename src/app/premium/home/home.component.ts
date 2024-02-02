@@ -19,34 +19,28 @@ export class HomePremiumComponent implements OnInit {
 
   allPosts: IFullPost[] = []
 
-  tempPosts: IFullPost[] = []
-
   constructor(private postService: PostsService){
   }
 
   ngOnInit(){
-    this.postService.getHighlightPosts().subscribe(res => {
-      if(res){
-        this.highlightPosts = [res[0], res[0], res[0], res[0], res[0]]
-      }
-    })
 
     this.postService.getPosts(0).subscribe(res => {
       if(res){
-        this.allPosts = res.posts
+        this.allPosts = res
+        this.highlightPosts = res.slice(0, 5)
       }
     })
 
-    this.postService.getPosts(1).subscribe(res => {
-      if(res){
-        this.tempPosts = res.posts
       }
-    })
-  }
 
   handleLoadMore = () => {
     this.canLoadMore = false
-    this.allPosts = [...this.allPosts, ...this.tempPosts]
+    this.postService.getPosts(1).subscribe(res => {
+      if(res){
+        this.allPosts = [...this.allPosts, ...res]
+      }
+    })
+
   }
 
 }

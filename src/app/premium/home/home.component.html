@@ -13,7 +13,7 @@
       *ngFor="let post of highlightPosts; index as i"
       [class.main]="i===0"
       [class.end]="i===2||i===3">
-      <a class="highlight-post-container">
+      <a class="highlight-post-container" [routerLink]="'post/' + post.id">
         <div class="post-banner">
           <img [src]="post.ogImage.source" />
         </div>
